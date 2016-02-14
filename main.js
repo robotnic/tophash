@@ -14,6 +14,7 @@ app.run(function($rootScope, $state, $location, $urlRouter) {
 
 	/*
 	//here the magic url forwarder starts
+	//todo: pack into module, hash namespaces to enable more than one app in window, find place to live and be maintained
 	*/
 	if(window!=top){
 		//state change from inside app 
