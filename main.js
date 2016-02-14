@@ -16,13 +16,16 @@ app.run(function($rootScope, $state, $location, $urlRouter) {
 	//here the magic url forwarder starts
 	*/
 	if(window!=top){
-		//write hash to top frame url
+		//state change from inside app 
 		$rootScope.$on('$locationChangeStart', function(evt) {
+		      //prevent hash change in iframe
 		      evt.preventDefault();
+
+		      //write hash to top frame	
 		      top.location.hash=$location.url();
 		})
 
-		//listen to top frame hash change
+		//listen to top frame hashchange event
 		top.onhashchange=function(data){
 			$location.path(top.window.location.hash.substring(1));
 			$urlRouter.sync();
@@ -36,6 +39,7 @@ app.run(function($rootScope, $state, $location, $urlRouter) {
 	//here the magic url forwarder ends
 	*/
 
+	//used by state dropdown in example
 	$rootScope.$state = $state;
 
 }); 
