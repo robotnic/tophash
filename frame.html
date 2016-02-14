@@ -4,12 +4,11 @@
     <script data-require="angular.js@*" data-semver="1.2.25" src="https://code.angularjs.org/1.2.25/angular.js"></script>
     <script data-require="ui-router@*" data-semver="0.2.12" src="https://rawgit.com/angular-ui/ui-router/0.2.12/release/angular-ui-router.js"></script>
     <script src="main.js"></script>
-    <title>Plunk demonstrating ui-router issue</title>
+    <title>Demonstrating ui-router deeplinking issue</title>
   </head>
 
   <body ng-app="tophash">
       
-      <div ui-view>ui-view not populated</div>  
     
       <div class="header">
 
@@ -21,5 +20,6 @@
                <option value="">Choose a state</option>
           </select>
       </div>
+      <div ui-view>ui-view not populated</div>  
   </body>
 </html>
