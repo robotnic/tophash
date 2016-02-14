@@ -15,17 +15,20 @@
   </head>
 
   <body ng-app="tophash">
-	<h2>Singe Page App living in iFrame</h2>      
+	<h2>Dummy SPA lives in iFrame</h2>      
     
       <div class="header">
 
-        Current State: <b>{{$state.current.name }}</b> <br>
-        Current Params: <b>{{$state.params | json }}</b><br>
         Go to state:<span style="color:red"> ↠</span>
         <select ng-model="foo" ng-change="$state.go(foo); foo = '';"
           ng-options="state as state.name for state in $state.get()">
                <option value="">Choose a state</option>
           </select><span style="color:red"> 	↞</span>
+
+
+	<h3>debug informations</h3>
+        Current State: <b>{{$state.current.name }}</b> <br>
+        Current Params: <b>{{$state.params | json }}</b><br>
       </div>
       <div ui-view>ui-view not populated</div>  
   </body>
