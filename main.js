@@ -18,14 +18,15 @@ app.run(function($rootScope, $state, $location, $urlRouter) {
 	if(window!=top){
 		//state change from inside app 
 		$rootScope.$on('$locationChangeStart', function(evt) {
-		      //prevent hash change in iframe
+
+		      //prevent hashchange in iframe
 		      evt.preventDefault();
 
 		      //write hash to top frame	
 		      top.location.hash=$location.url();
 		})
 
-		//listen to top frame hashchange event
+		//listen to top frame for hashchange event
 		top.onhashchange=function(data){
 			$location.path(top.window.location.hash.substring(1));
 			$urlRouter.sync();
