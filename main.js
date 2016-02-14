@@ -5,7 +5,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
   $stateProvider.state({ name: 'xx', url: '/', controller: function() { }, template: '<h1>xx</h1><div ui-view></div>'});
   $stateProvider.state({ name: 'home', url: '/home', controller: function() { }, template: '<h1>Home</h1><div ui-view></div>'});
-  $stateProvider.state({ name: 'home.foo', url: '/foo', controller: function() { }, template: '<h1>foo</h1>'});
+  $stateProvider.state({ name: 'home.foo', url: '/foo', controller: function() { }, template: '<h1>foo</h1><b>Nested state</b>'});
 });
 
 // Adds state change hooks; 
