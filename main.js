@@ -11,7 +11,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 // Adds state change hooks; 
 app.run(function($rootScope, $state, $location, $urlRouter) {
 
+	/*
 	//here the magic url forwarder starts
+	*/
 	if(window!=top){
 		//write hash to top frame url
 		$rootScope.$on('$locationChangeStart', function(evt) {
@@ -25,7 +27,9 @@ app.run(function($rootScope, $state, $location, $urlRouter) {
 			$urlRouter.sync();
 		}
 	}
+	/*
 	//here the magic url forwarder ends
+	*/
 
 	$rootScope.$state = $state;
 
